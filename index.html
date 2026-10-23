@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>齐天大圣 · 云海骑行 | Sun Wukong Animated SVG</title>
+  <meta name="description" content="孙悟空骑自行车穿越云海的循环动画 SVG。车轮、曲柄、踏板与双腿同步运动，披风、猴尾、翎子与云气随风飘动。">
+  <meta name="theme-color" content="#19130f">
+  <meta property="og:title" content="齐天大圣 · 云海骑行">
+  <meta property="og:description" content="孙悟空骑自行车穿越云海的循环动画 SVG。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="wukong-preview.png">
+  <style>
+    :root {
+      --ink: #221913;
+      --paper: #f7ecd7;
+      --night: #19130f;
+      --night-soft: #251c16;
+      --gold: #c79a5b;
+      --gold-soft: #e6c48d;
+      --red: #b8382c;
+      --muted: #b49b82;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      color: #f7ead6;
+      background:
+        radial-gradient(ellipse at 50% 8%, rgba(122, 86, 55, .32), transparent 48vw),
+        radial-gradient(ellipse at 84% 74%, rgba(78, 44, 31, .25), transparent 40vw),
+        linear-gradient(145deg, #211913 0%, #17110e 54%, #100c0a 100%);
+      font-family: "KaiTi", "STKaiti", "Kaiti SC", "Songti SC", Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: clamp(22px, 5vw, 56px) clamp(14px, 4vw, 44px);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .2;
+      background-image: radial-gradient(rgba(255, 241, 217, .45) .55px, transparent .55px);
+      background-size: 5px 5px;
+      mix-blend-mode: soft-light;
+    }
+
+    .page {
+      position: relative;
+      width: min(1160px, 100%);
+    }
+
+    .topline {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: clamp(18px, 3vw, 30px);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--gold);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: .28em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .75;
+    }
+
+    h1 {
+      margin: 12px 0 0;
+      color: #faedda;
+      font-size: clamp(34px, 5.2vw, 68px);
+      font-weight: 400;
+      letter-spacing: .13em;
+      line-height: 1.04;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
+    }
+
+    h1 .dot { color: var(--gold-soft); }
+
+    .seal {
+      flex: 0 0 auto;
+      width: clamp(38px, 5vw, 52px);
+      height: clamp(38px, 5vw, 52px);
+      display: grid;
+      place-items: center;
+      color: #f4dfbd;
+      font-size: clamp(21px, 2.8vw, 28px);
+      line-height: 1;
+      border: 1px solid rgba(189, 75, 54, .9);
+      background: var(--red);
+      box-shadow: inset 0 0 0 3px rgba(248, 224, 186, .16), 0 8px 26px rgba(0, 0, 0, .25);
+      transform: rotate(-2deg);
+      user-select: none;
+    }
+
+    .art-frame {
+      position: relative;
+      padding: clamp(7px, 1.2vw, 13px);
+      border: 1px solid rgba(204, 165, 103, .42);
+      background: rgba(255, 247, 233, .035);
+      box-shadow:
+        0 0 0 5px rgba(0, 0, 0, .13),
+        0 26px 80px rgba(0, 0, 0, .46);
+    }
+
+    .art-frame::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(247, 225, 188, .09);
+      pointer-events: none;
+    }
+
+    object, .fallback-art {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border: 0;
+      background: var(--paper);
+    }
+
+    .meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: clamp(20px, 4vw, 54px);
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(12px, 1.25vw, 14px);
+      line-height: 1.85;
+    }
+
+    .note {
+      max-width: 54ch;
+      margin: 0;
+    }
+
+    .note strong {
+      color: #e6d1b7;
+      font-weight: 400;
+    }
+
+    .links {
+      margin: 0;
+      flex: 0 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      line-height: 1.9;
+    }
+
+    .links a {
+      color: var(--gold-soft);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(230, 196, 141, .34);
+      padding-bottom: 1px;
+      transition: color .18s ease, border-color .18s ease;
+    }
+
+    .links a:hover { color: #fff3de; border-color: #fff3de; }
+    .links a:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 4px; }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 34px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(189, 154, 102, .16);
+      color: #886f5a;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 9.5px;
+      letter-spacing: .14em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 680px) {
+      .topline { align-items: flex-start; }
+      h1 { letter-spacing: .08em; }
+      .meta { flex-direction: column; gap: 12px; }
+      .foot { margin-top: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .links a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topline">
+      <div>
+        <div class="eyebrow">Sun Wukong · Cloud Ride</div>
+        <h1>齐天大圣<span class="dot"> · </span>云海骑行</h1>
+      </div>
+      <div class="seal" aria-hidden="true">悟</div>
+    </header>
+
+    <div class="art-frame">
+      <object data="sun-wukong-bicycle.svg" type="image/svg+xml"
+        aria-label="孙悟空骑着自行车穿过云海的循环动画">
+        <img class="fallback-art" src="sun-wukong-bicycle.svg"
+          alt="孙悟空骑着自行车穿过云海的循环动画">
+      </object>
+    </div>
+
+    <div class="meta">
+      <p class="note">
+        <strong>一幅会动的西游记插画。</strong>
+        车轮、曲柄、踏板与双腿同步转动；披风、猴尾、雉鸡翎和云气各有自己的节奏。
+        纯矢量 SVG，内置“减少动态效果”支持。
+      </p>
+      <p class="links">
+        <a href="sun-wukong-bicycle.svg" target="_blank" rel="noopener">打开原尺寸 SVG</a>
+        <a href="wukong-preview.png" target="_blank" rel="noopener">静态预览</a>
+      </p>
+    </div>
+
+    <footer class="foot">
+      <span>An original animated SVG · 2026</span>
+      <span>Sun Wukong belongs to the public-domain tale · Journey to the West</span>
+    </footer>
+  </main>
+</body>
+</html>
